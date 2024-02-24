@@ -1,4 +1,3 @@
-import { argumentDatasType, returnValueDatasType, my_types } from "@/app/page";
 import {
   Box,
   Button,
@@ -13,6 +12,7 @@ import {
 } from "@radix-ui/themes";
 import { PlusIcon, TrashIcon } from "@radix-ui/react-icons";
 import React from "react";
+import { argumentDatasType, my_types, returnValueDatasType } from "@/app/types";
 
 interface AddPanelType {
   argumentDatas: argumentDatasType[];

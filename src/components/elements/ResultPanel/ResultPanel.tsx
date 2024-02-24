@@ -1,4 +1,4 @@
-import { argumentDatasType, returnValueDatasType } from "@/app/page";
+import { argumentDatasType, returnValueDatasType } from "@/app/types";
 import { Box, Code, Heading } from "@radix-ui/themes";
 
 interface ResultPanelType {

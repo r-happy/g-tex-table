@@ -4,29 +4,9 @@ import { AddPanel } from "@/components/elements/AddPanel/AddPanel";
 import { ResultPanel } from "@/components/elements/ResultPanel/ResultPanel";
 import { Flex, Text, Button, Container, Tabs, Box } from "@radix-ui/themes";
 import { useState } from "react";
+import { argumentDatasType, my_types, returnValueDatasType } from "./types";
 
-export const my_types = {
-  void: "void",
-  int: "int",
-  char: "char",
-  float: "float",
-  long: "long",
-  custom: "custom",
-};
-
-export type argumentDatasType = {
-  type: keyof typeof my_types;
-  value_name: string;
-  explanation: string;
-};
-
-export type returnValueDatasType = {
-  type: keyof typeof my_types;
-  value_name: string;
-  explanation: string;
-};
-
-function Home() {
+export default function Home() {
   const [argumentDatas, setArgumentDatas] = useState<argumentDatasType[]>([]);
   const [returnValueDatas, setReturnValueDatas] = useState<
     returnValueDatasType[]
@@ -146,5 +126,3 @@ function Home() {
     </main>
   );
 }
-
-export default Home

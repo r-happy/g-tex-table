@@ -26,13 +26,16 @@ export type returnValueDatasType = {
   explanation: string;
 };
 
-export default function Home() {
+function Home() {
   const [argumentDatas, setArgumentDatas] = useState<argumentDatasType[]>([]);
   const [returnValueDatas, setReturnValueDatas] = useState<
     returnValueDatasType[]
   >([]);
 
-  const arghandleChangeType = (index: number, newType: keyof typeof my_types) => {
+  const arghandleChangeType = (
+    index: number,
+    newType: keyof typeof my_types
+  ) => {
     const newArgumentDatas = [...argumentDatas];
     newArgumentDatas[index] = { ...newArgumentDatas[index], type: newType };
     setArgumentDatas(newArgumentDatas);
@@ -66,7 +69,10 @@ export default function Home() {
     ]);
   };
 
-  const rethandleChangeType = (index: number, newType: keyof typeof my_types) => {
+  const rethandleChangeType = (
+    index: number,
+    newType: keyof typeof my_types
+  ) => {
     const newReturnValueDatas = [...returnValueDatas];
     newReturnValueDatas[index] = {
       ...newReturnValueDatas[index],
@@ -140,3 +146,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home

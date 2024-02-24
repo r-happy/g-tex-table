@@ -38,7 +38,7 @@ export const AddPanel: React.FC<AddPanelType> = ({
   retonChangeType,
   retonChangeValueName,
   retonChangeExplanation,
-  retonAddReturnValue
+  retonAddReturnValue,
 }) => {
   const typesArray = Object.keys(my_types).map(
     (key) => my_types[key as keyof typeof my_types]

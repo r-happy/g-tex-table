@@ -42,8 +42,6 @@ export const ResultPanel: React.FC<ResultPanelType> = ({
     latexTable += `\\end{table}`;
 
     return latexTable;
-
-    return latexTable;
   }
 
   const latexTable = generateLatexTable(argumentDatas, returnValueDatas);

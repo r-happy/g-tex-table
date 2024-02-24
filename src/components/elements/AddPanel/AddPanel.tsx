@@ -1,4 +1,4 @@
-import { argumentDatasType, returnValueDatasType, types } from "@/app/page";
+import { argumentDatasType, returnValueDatasType, my_types } from "@/app/page";
 import {
   Box,
   Button,
@@ -16,13 +16,13 @@ import React from "react";
 
 interface AddPanelType {
   argumentDatas: argumentDatasType[];
-  argonChangeType: (index: number, newType: keyof typeof types) => void;
+  argonChangeType: (index: number, newType: keyof typeof my_types) => void;
   argonChangeValueName: (index: number, newValueName: string) => void;
   argonChangeExplanation: (index: number, newExplanation: string) => void;
   argonAddArgument: () => void;
 
   returnValueDatas: returnValueDatasType[];
-  retonChangeType: (index: number, newType: keyof typeof types) => void;
+  retonChangeType: (index: number, newType: keyof typeof my_types) => void;
   retonChangeValueName: (index: number, newValueName: string) => void;
   retonChangeExplanation: (index: number, newExplanation: string) => void;
   retonAddReturnValue: () => void;
@@ -40,8 +40,8 @@ export const AddPanel: React.FC<AddPanelType> = ({
   retonChangeExplanation,
   retonAddReturnValue
 }) => {
-  const typesArray = Object.keys(types).map(
-    (key) => types[key as keyof typeof types]
+  const typesArray = Object.keys(my_types).map(
+    (key) => my_types[key as keyof typeof my_types]
   );
 
   return (
@@ -77,7 +77,7 @@ export const AddPanel: React.FC<AddPanelType> = ({
                     <Table.Cell>
                       <Select.Root
                         defaultValue={e.type}
-                        onValueChange={(f: keyof typeof types) => {
+                        onValueChange={(f: keyof typeof my_types) => {
                           argonChangeType(index, f);
                         }}
                       >
@@ -155,7 +155,7 @@ export const AddPanel: React.FC<AddPanelType> = ({
                     <Table.Cell>
                       <Select.Root
                         defaultValue={e.type}
-                        onValueChange={(f: keyof typeof types) => {
+                        onValueChange={(f: keyof typeof my_types) => {
                           retonChangeType(index, f);
                         }}
                       >

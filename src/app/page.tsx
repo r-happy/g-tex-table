@@ -5,7 +5,7 @@ import { ResultPanel } from "@/components/elements/ResultPanel/ResultPanel";
 import { Flex, Text, Button, Container, Tabs, Box } from "@radix-ui/themes";
 import { useState } from "react";
 
-export const types = {
+export const my_types = {
   void: "void",
   int: "int",
   char: "char",
@@ -15,13 +15,13 @@ export const types = {
 };
 
 export type argumentDatasType = {
-  type: keyof typeof types;
+  type: keyof typeof my_types;
   value_name: string;
   explanation: string;
 };
 
 export type returnValueDatasType = {
-  type: keyof typeof types;
+  type: keyof typeof my_types;
   value_name: string;
   explanation: string;
 };
@@ -32,7 +32,7 @@ export default function Home() {
     returnValueDatasType[]
   >([]);
 
-  const arghandleChangeType = (index: number, newType: keyof typeof types) => {
+  const arghandleChangeType = (index: number, newType: keyof typeof my_types) => {
     const newArgumentDatas = [...argumentDatas];
     newArgumentDatas[index] = { ...newArgumentDatas[index], type: newType };
     setArgumentDatas(newArgumentDatas);
@@ -66,7 +66,7 @@ export default function Home() {
     ]);
   };
 
-  const rethandleChangeType = (index: number, newType: keyof typeof types) => {
+  const rethandleChangeType = (index: number, newType: keyof typeof my_types) => {
     const newReturnValueDatas = [...returnValueDatas];
     newReturnValueDatas[index] = {
       ...newReturnValueDatas[index],
